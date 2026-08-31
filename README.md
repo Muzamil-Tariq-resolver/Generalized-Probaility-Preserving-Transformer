@@ -1,4 +1,4 @@
-# Probability-Preserving Transformer
+# Generalized Probability-Preserving Transformer
 
 A Transformer-based framework for learning the temporal evolution of quantum wavefunctions governed by the **Time-Dependent Schrödinger Equation (TDSE)** while enforcing probability conservation directly through a hard architectural constraint.
 
