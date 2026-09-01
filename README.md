@@ -1,14 +1,14 @@
 # Generalized Probability-Preserving Transformer
 
-A Transformer-based framework for learning the temporal evolution of quantum wavefunctions governed by the **Time-Dependent Schrödinger Equation (TDSE)** while enforcing probability conservation directly through a hard architectural constraint.
+A Transformer-based framework for learning the temporal evolution of quantum wavefunctions governed by the Time-Dependent Schrödinger Equation (TDSE) while enforcing probability conservation directly through a hard architectural constraint.
 
 ---
 
 ## Overview
 
-The **Probability-Preserving Transformer (PPT)** is designed to learn quantum wavefunction evolution while maintaining the fundamental normalization condition of quantum mechanics.
+The Probability-Preserving Transformer (PPT) is designed to learn quantum wavefunction evolution while maintaining the fundamental normalization condition of quantum mechanics.
 
-The reference quantum trajectories are generated numerically using the **Crank--Nicolson (CN) method** for a one-dimensional infinite square well. The Transformer learns to predict future wavefunctions from a short temporal history of previously evolved states.
+The reference quantum trajectories are generated numerically using the Crank--Nicolson (CN) method for a one-dimensional infinite square well. The Transformer learns to predict future wavefunctions from a short temporal history of previously evolved states.
 
 Unlike approaches that enforce physical properties only through additional loss penalties, the proposed PPT applies a hard probability-preserving normalization layer to its output. The predicted complex wavefunction is explicitly normalized during every forward pass, ensuring that its discrete probability remains approximately unity independently of the prediction loss.
 
@@ -18,7 +18,7 @@ Tested whether the same PPT architecture can generalize across multiple physical
 
 ## Key Features
 
-- Numerical TDSE trajectory generation using the **Crank--Nicolson method**
+- Numerical TDSE trajectory generation using the Crank--Nicolson method
 - One-dimensional infinite square-well quantum system
 - Multi-token temporal wavefunction representation
 - Transformer-based temporal sequence modeling
@@ -204,7 +204,7 @@ Therefore, probability conservation is incorporated directly into the network ar
 
 ## Generalization Experiment
 
-The extended experiment investigates whether the same PPT architecture can generalize its learned quantum temporal evolution to **previously unseen trajectories across multiple initial-condition families**.
+The extended experiment investigates whether the same PPT architecture can generalize its learned quantum temporal evolution to previously unseen trajectories across multiple initial-condition families.
 
 The model is evaluated on:
 
@@ -217,7 +217,7 @@ The architecture and hard probability-preserving constraint remain unchanged acr
 
 ### Split Strategy
 
-The split is performed at the **trajectory level**, rather than at individual time steps. Therefore, all temporal samples belonging to a given trajectory remain exclusively in either the training or testing subset.
+The split is performed at the trajectory level, rather than at individual time steps. Therefore, all temporal samples belonging to a given trajectory remain exclusively in either the training or testing subset.
 
 This prevents temporal information leakage and provides a stricter evaluation of generalization to previously unseen quantum trajectories.
 
@@ -244,7 +244,7 @@ $$
 \mathcal{L} = \mathcal{L}_{MSE} + \alpha \mathcal{L}_{boundary}
 $$
 
-The probability-preserving normalization is applied architecturally and is therefore **not introduced as an additional probability penalty** in the loss function.
+The probability-preserving normalization is applied architecturally and is therefore not introduced as an additional probability penalty in the loss function.
 
 ---
 
@@ -349,7 +349,7 @@ Generalization is evaluated at multiple levels:
 5. **Physical consistency evaluation**  
    Examines probability conservation, energy behavior, and quantum-state fidelity.
 
-This evaluation separates two important aspects of the learned model: **predictive accuracy** and **physical consistency**.
+This evaluation separates two important aspects of the learned model: predictive accuracy and physical consistency.
 
 ---
 
